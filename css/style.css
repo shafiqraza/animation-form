@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right , #6ddccf, #94ebcd);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .5s all;
+}
+
+div {
+  /* width: 25%;
+  height: 50px; */
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  transition: .5s transform;
+  
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translate(-50%, 50%) ;
+  
+}
+
+.active {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  flex: 1;
+  height: 100%;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.active:focus-within {
+  transform: translate(-50%, -52%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+div span.material-icons-outlined {
+  cursor: pointer;
+}
+
+div span.material-icons-outlined:active {
+  transform: translateX(2px);
+}
+
+.field-finish p {
+  font-family: sans-serif;
+}
+
+.invalid {
+  animation: shake .1s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) rotate(2deg);
+  }
+  
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
